@@ -1,0 +1,55 @@
+<div style="width: 85%;" class="container-flex">
+    <div class="header"></div>
+    <div style="margin-top: -20px;" class="content">
+        <img src="/assets/images/pepe.svg" height="32" width="32" alt="Pepe">
+        <h3 class="_weight-900" style="margin-bottom:30px;">Wanaby &middot; Карточки</h3>
+        <div class="swiper-container" id="swiper-container">
+            <div class="swiper-wrapper" id="swiper-wrapper">
+                {{#each users}}
+                    <div class="swiper-slide">
+                        <div class="profile-page__card _margin-bottom-20" data-user-id="{{this.tg_user_id}}">
+                            <div class="avatar js-avatar"
+                                 style="background: url('{{this.profile_image_url}}'); background-size: cover; background-position: top center;">
+                                <div class="avatar-overlay"></div>
+                                <div class="avatar-text">
+                                    <h3 style="font-size:26px;">{{this.name}}, {{this.age}}</h3>
+                                    <p style="font-size:20px;">{{this.city}}</p>
+                                </div>
+                            </div>
+                            <div style="padding: 15px;" class="profile-page__buttons">
+                                <button data-user-id="{{this.tg_user_id}}" class="js-dislike dislike"><i
+                                        class="fa-solid fa-xmark"></i></button>
+                                <button data-user-id="{{this.tg_user_id}}"
+                                        class="info js-view-info-user-dating"><i
+                                        class="fa-regular fa-clipboard"></i></button>
+                                <button data-user-id="{{this.tg_user_id}}" class="js-like like"><i
+                                        class="fas fa-heart heart"></i></button>
+                            </div>
+                        </div>
+                        <div id="openModal-{{this.tg_user_id}}" class="modal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h3 class="modal-title">О себе</h3>
+                                        <a href="#close" title="Close" class="close">×</a>
+                                    </div>
+                                    <div class="modal-body">
+                                        <span style="color:#242424;font-weight:300;">{{this.text}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+        <div style="margin-top:20px;" class="mobile-footer">
+            <div class="footer-menu">
+                <a href="../likes"><i class="fa-regular fa-heart"></i></a>
+                <a class="active" href="javascript:void(0);"><i class="fa-solid fa-id-badge"></i></a>
+                <a href="../settings"><i class="fas fa-cog"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>

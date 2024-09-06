@@ -1,0 +1,76 @@
+<div class="container-flex">
+    <div class="header"></div>
+    <div class="content">
+        <img style="" src="/assets/images/pepe.svg" height="32" width="32" alt="Settings">
+        <h3 class="_weight-900 _margin-bottom-20">Wanaby &middot; Настройки</h3>
+        <div class="settings-page">
+            <h3 style="margin:0;margin:8px 0 5px 0;">Кого тебе показывать?</h3>
+            <div class="radio-inputs">
+                <label>
+                    <input value="g1" class="radio-input" type="radio" name="gender-category">
+                    <span class="radio-tile">
+                        <span class="radio-icon">
+                            <i class="fa-solid fa-mars"></i>
+                        </span>
+                        <span class="radio-label">Парней</span>
+                    </span>
+                </label>
+                <label>
+                    <input value="g2" class="radio-input" type="radio" name="gender-category">
+                    <span class="radio-tile">
+                        <span class="radio-icon">
+                            <i class="fa-solid fa-venus"></i>
+                        </span>
+                        <span class="radio-label">Девушек</span>
+                    </span>
+                </label>
+<!--                <label>-->
+<!--                    <input value="g3" class="radio-input" type="radio" name="gender-category">-->
+<!--                    <span class="radio-tile">-->
+<!--                        <span class="radio-icon">-->
+<!--                            <i class="fa-solid fa-venus-mars"></i>-->
+<!--                        </span>-->
+<!--                        <span class="radio-label">Всех</span>-->
+<!--                    </span>-->
+<!--                </label>-->
+            </div>
+            <h3 style="margin:0;margin:8px 0 5px 0;">Регион поиска</h3>
+            <div class="radio-inputs">
+                <label>
+                    <input value="{{ city }}" class="radio-input" type="radio" name="city-search">
+                    <span class="radio-tile">
+                        <span class="radio-icon">
+                            <i class="fa-solid fa-city"></i>
+                        </span>
+                        <span class="radio-label">Из своего города</span>
+                    </span>
+                </label>
+                <label>
+                    <input value="all" class="radio-input" type="radio" name="city-search">
+                    <span class="radio-tile">
+                        <span class="radio-icon">
+                            <i class="fa-solid fa-globe"></i>
+                        </span>
+                        <span class="radio-label">По всей России</span>
+                    </span>
+                </label>
+            </div>
+            <div style="margin-top:17px;" class="settings-page__buttons-confirm">
+                <a style="margin-right:40px;" class="button no" href="/settings">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <a class="js-confirm-edit-filter button yes">
+                    <i class="fa-solid fa-check"></i>
+                </a>
+            </div>
+        </div>
+        <div class="mobile-footer">
+            <div class="footer-menu">
+                <a href="../likes"><i class="fa-regular fa-heart"></i></a>
+                <a href="../dating"><i class="fa-solid fa-id-badge"></i></a>
+                <a class="active" href="javascript:void(0);"><i class="fas fa-cog"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>

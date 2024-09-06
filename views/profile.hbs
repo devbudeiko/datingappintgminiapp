@@ -1,0 +1,53 @@
+<div class="container-flex">
+    <div class="header"></div>
+    <div class="content">
+        <img style="" src="/assets/images/pepe.svg" height="32" width="32" alt="Pepe">
+        <h3 class="_weight-900 _margin-bottom-20">Wanaby &middot; Настройки</h3>
+        <div class="profile-page__card _margin-bottom-20">
+            <div class="avatar" style="background: url('../{{user.profile_image_url}}')
+                    no-repeat center center fixed;
+                    background-size: cover;">
+                <div class="avatar-overlay"></div>
+                <div class="avatar-text">
+                    <h3 style="font-size:26px;">{{user.name}}, {{user.age}}</h3>
+                    <p style="font-size:20px;">{{user.city}}</p>
+                </div>
+            </div>
+            <div style="margin-top:10px;margin-bottom:-5px;padding:15px;justify-content:center;"
+                 class="profile-page__buttons">
+                <div class="settings-page__buttons-confirm">
+                    <a style="margin-right:40px;" class="button no" href="/settings">
+                        <i
+                                class="fas fa-arrow-left"></i>
+                    </a>
+                </div>
+                <button style="background-color:#6D53F4;box-shadow:unset;" class="info js-view-info-user text-user"
+                        data-user-id="{{user.tg_user_id}}"><i
+                        class="fa-regular fa-clipboard"></i></button>
+            </div>
+        </div>
+        <div class="mobile-footer">
+            <div class="footer-menu">
+                <a href="../likes"><i class="fa-regular fa-heart"></i></a>
+                <a href="../dating"><i class="fa-solid fa-id-badge"></i></a>
+                <a class="active" href="javascript:void(0);"><i class="fas fa-cog"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+</div>
+
+<div id="openModal-{{user.tg_user_id}}" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">О себе</h3>
+                <a href="#close" title="Close" class="close">×</a>
+            </div>
+            <div class="modal-body">
+                <span style="color:#242424;font-weight:300;">{{user.text}}</span>
+            </div>
+        </div>
+    </div>
+</div>

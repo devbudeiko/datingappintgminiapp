@@ -1,0 +1,47 @@
+<div class="container-flex">
+    <div class="header"></div>
+    <div class="content">
+        <img style="" src="/assets/images/pepe.svg" height="32" width="32" alt="Settings">
+        <h3 class="_weight-900 _margin-bottom-20">Wanaby &middot; Настройки</h3>
+        <div class="settings-page">
+            <h3>Редактирование анкеты</h3>
+            <div class="form-group">
+                <span>О себе:</span>
+                <textarea autocorrect="off" autocomplete="off" placeholder="* Максимум 120 символов. Только англо-русские символы, цифры и знаки _,." maxlength="120" class="js-edit-sheet-text">{{user.text}}</textarea>
+            </div>
+            <div class="form-group">
+                <span>Имя:</span>
+                <input class="js-edit-sheet-name" type="text" value="{{user.name}}">
+            </div>
+            <div class="form-group">
+                <span>Возраст:</span>
+                <select class="custom-select js-edit-sheet-age" id="age">
+                    <option>{{user.age}}</option>
+                </select>
+            </div>
+            <div style="margin-bottom:20px;" class="form-group">
+                <span>Город:</span>
+                <select id="citySelect" class="custom-select js-edit-sheet-city">
+                    <option>{{user.city}}</option>
+                </select>
+            </div>
+            <div style="margin:0;" class="settings-page__buttons-confirm">
+                <a style="margin-right:40px;" class="button no" href="/settings">
+                    <i class="fas fa-arrow-left"></i>
+                </a>
+                <a class="js-confirm-edit-sheet button yes">
+                    <i class="fa-solid fa-check"></i>
+                </a>
+            </div>
+        </div>
+        <div class="mobile-footer">
+            <div class="footer-menu">
+                <a href="../likes"><i class="fa-regular fa-heart"></i></a>
+                <a href="../dating"><i class="fa-solid fa-id-badge"></i></a>
+                <a class="active" href="javascript:void(0);"><i class="fas fa-cog"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+    </div>
+</div>

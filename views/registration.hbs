@@ -1,0 +1,185 @@
+<div class="container-flex">
+    <div class="header">
+
+    </div>
+    <div class="content">
+        <img class="_margin-bottom-20 js-top-img-registration" src="./assets/images/pepe-records.svg" height="64"
+             width="64">
+        <img style="display:none;"
+             class="_margin-bottom-20 js-top-img-registration-success animate__animated animate__fadeInRight"
+             src="./assets/images/pepe-success-registration.svg" height="64" width="64">
+        <div class="form-container">
+            <form id="multi-step-form">
+                <div class="content-top">
+                    <h2 style="margin:0;">Создание анкеты</h2>
+                    <div class="progress-bar-container">
+                        <div class="progress-text" id="progress-text">1 / 4</div>
+                        <div class="progress-bar">
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="content-middle">
+                    <div class="form-step" data-stgender>
+                        <h3 style="margin:0;margin-bottom:5px;">Как тебя зовут?</h3>
+                        <input class="js-registration-form-name" style="margin:0;margin-bottom:5px;"
+                               type="text" id="name" placeholder="Введи свое имя"
+                               maxlength="20" autocomplete="off" required>
+                        <span style="margin-bottom:10px;display:block;font-size:13px;color:#797979;">* Только русские и английские символы</span>
+                        <h3 style="margin:0;margin-bottom:5px;">Сколько тебе лет?</h3>
+                        <div class="custom-select-container">
+                            <select class="custom-select js-registration-age-value" id="age" required>
+                                <option disabled selected value="">Выбери возраст</option>
+                            </select>
+                        </div>
+                        <h3 style="margin-bottom:0;margin-bottom:5px;">Какой у тебя пол?</h3>
+                        <div class="radio-inputs">
+                            <label>
+                                <input value="g1" checked class="radio-input" type="radio" name="gender">
+                                <span class="radio-tile">
+					<span class="radio-icon">
+					<i class="fa-solid fa-mars"></i>
+					</span>
+					<span class="radio-label">Мужской</span>
+				</span>
+                            </label>
+                            <label>
+                                <input value="g2" class="radio-input" type="radio" name="gender">
+                                <span class="radio-tile">
+				<span class="radio-icon">
+   				<i class="fa-solid fa-venus"></i>
+				</span>
+				<span class="radio-label">Женский</span>
+			</span>
+                            </label>
+                        </div>
+
+                    </div>
+                    <div class="form-step" data-step="2">
+                        <h3 style="margin-bottom:0;margin-bottom:5px;">О себе: <span
+                                style="color:#797979;font-size:12px;">(необязательно)</span></h3>
+                        <textarea autocorrect="off" autocomplete="off" class="js-registration-form-text" maxlength="120"
+                                  style="margin:0;margin-bottom:5px;"
+                                  placeholder="* Максимум 120 символов. Только англо-русские символы, цифры и знаки _,."
+                                  type="text" id="text"></textarea>
+                        <h3 style="margin:0;margin-bottom:5px;">Откуда ты?</h3>
+                        <div class="custom-select-container">
+                            <select class="custom-select js-registration-city-value" required>
+                                <option disabled selected value="">Выбери город</option>
+                            </select>
+                        </div>
+                        <h3 style="margin:0;margin:8px 0 5px 0;">Кого тебе показывать?</h3>
+                        <div class="radio-inputs">
+                            <label>
+                                <input value="g1" class="radio-input" type="radio" name="gender-category">
+                                <span class="radio-tile">
+					<span class="radio-icon">
+					<i class="fa-solid fa-mars"></i>
+					</span>
+					<span class="radio-label">Парней</span>
+				</span>
+                            </label>
+                            <label>
+                                <input value="g2" checked class="radio-input" type="radio" name="gender-category">
+                                <span class="radio-tile">
+				<span class="radio-icon">
+   				<i class="fa-solid fa-venus"></i>
+				</span>
+				<span class="radio-label">Девушек</span>
+			</span>
+                            </label>
+<!--                            <label>-->
+<!--                                <input value="g3" class="radio-input" type="radio" name="gender-category">-->
+<!--                                <span class="radio-tile">-->
+<!--				<span class="radio-icon">-->
+<!--            <i class="fa-solid fa-venus-mars"></i>-->
+<!--				</span>-->
+<!--				<span class="radio-label">Всех</span>-->
+<!--			</span>-->
+<!--                            </label>-->
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="3">
+                        <h3 style="margin:0;margin-bottom:5px;">Фото профиля</h3>
+                        <span style="display:block;font-size:13px;color:#797979;">Загрузи свое самое крутое фото</span>
+                        <span style="display:block;font-size:13px;color:#797979;margin-bottom:15px;">* Максимальный размер файла 10 МБ</span>
+                        <div style="display:flex;margin-bottom:20px;">
+                            <div class="uploader uploader-custom-resize" id="profileUploader">
+                                <input type="file" id="profileImageInput"
+                                       accept=".jpg, .jpeg, .png"
+                                       required>
+                                <img id="profileImagePreview" src="" alt="Image Preview">
+                                <label class="js-icon-uploader-profile" for="profileImageInput">
+                                    <i style="font-size:50px;color:#797979;" class="fa-solid fa-plus"></i>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="imageForm" enctype="multipart/form-data">
+                        <div class="form-step" data-step="4">
+                            <h3 style="margin:0;margin-bottom:5px;">Верификация личности</h3>
+                            <span style="display:block;font-size:13px;color:#797979;">Сделай 2 селфи</span>
+                            <span style="display:block;font-size:13px;color:#797979;margin-bottom:15px;">* Максимальный размер файла 10 МБ</span>
+                            <div style="display:flex;margin-bottom:20px;">
+                                <div style="margin-right: 15px;" class="uploader" id="uploader1">
+                                    <input type="file" id="image1Input"
+                                           accept=".jpg, .jpeg, .png"
+                                           capture="user" required>
+                                    <img id="image1Preview" src="" alt="Image Preview">
+                                    <label class="camera-icon-1" for="image1Input">
+                                        <i style="font-size:50px;color:#797979;" class="fa-solid fa-camera"></i>
+                                    </label>
+                                </div>
+                                <div class="uploader" id="uploader2">
+                                    <input type="file" id="image2Input"
+                                           accept=".jpg, .jpeg, .png"
+                                           capture="user" required>
+                                    <img id="image2Preview" src="" alt="Image Preview">
+                                    <label class="camera-icon-2" for="image2Input">
+                                        <i style="font-size:50px;color:#797979;" class="fa-solid fa-camera"></i>
+                                    </label>
+                                </div>
+                            </div>
+                            <button
+                                    style="margin:0 auto;border:none;display:flex;justify-content: center;"
+                                    class="main-button js-check-button">Начать проверку
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="content-bottom" style="margin:0;">
+                    <div class="form-navigation">
+                        <div class="profile-page__buttons">
+                            <div style="padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;">
+                                <button type="button" id="prevBtn" class="js-prev-button nav-button"><i
+                                        class="fas fa-arrow-left"></i>
+                                </button>
+                                <button type="button" id="nextBtn" class="nav-button"><i
+                                        class="fas fa-arrow-right"></i>
+                                </button>
+                                <button style="display:none;" type="submit" id="finishBtn"
+                                        class="js-finish-button nav-button inactive">
+                                    <i class="fa-solid fa-check"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <div class="form-success animate__animated animate__fadeInRight"
+                 style="display: none;padding:10px;text-align:center;">
+                <h2 style="margin:0;margin-bottom:5px;">Поздравляем!</h2>
+                <p style="margin:0;margin-bottom:30px;">Анкета успешно создана.</p>
+                <a href="../" style="width:50%;margin:0 auto;" class="main-button">Перейти в профиль</a>
+                <p style="margin-top:30px;margin-bottom:10px;"><span
+                        style="color:red;font-weight:700;display:block;margin-bottom:5px;">Предупреждение!</span>
+                    Помни, что в интернете люди могут выдавать себя за других.
+                    Wanaby не идентифицирует пользователей по паспортным данным.
+                    Ты используешь приложение на свой страх и риск.</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+<div class="container-flex">
+    <div class="header"></div>
+    <div class="content">
+        <img src="/assets/images/pepe.svg" height="32" width="32" alt="Pepe">
+        <h3 class="_weight-900 _margin-bottom-20">Wanaby &middot; События</h3>
+
+        <div class="tabs-container">
+            <div class="tab">
+                <button class="tablinks active" data-tab="Likes">Лайки</button>
+            </div>
+            <a href="../matches">
+                <div class="tab">
+                    <button class="tablinks" data-tab="Matches">Мэтчи</button>
+                </div>
+            </a>
+        </div>
+
+        <div id="Likes" class="tabcontent active">
+            {{#if users.length}}
+                <div class="likes-page">
+                    <ul class="likes-list">
+                        {{#each users}}
+                            <li class="likes-list__item" data-user-id="{{this.tg_user_id}}">
+                                <div class="col-group">
+                                    <div class="col-1">
+                                        <img src="{{this.profile_image_url}}" alt="{{this.name}}" height="50"
+                                             width="50">
+                                        <div class="profile-info">
+                                            <span class="profile-info-text">{{this.name}}, {{this.age}}</span>
+                                            <span class="profile-info-city">{{this.city}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-2">
+                                        <a class="js-view-info-user text-user"
+                                           href="javascript:void(0);"
+                                           data-user-id="{{this.tg_user_id}}">
+                                            <i class="fa-regular fa-clipboard"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-3" style="margin-bottom:10px;">
+                                    <a class="js-dislike-user dislike-user" href="javascript:void(0);">
+                                        <i class="fa-solid fa-times"></i> Дизлайк
+                                    </a>
+                                    <a class="js-like-user like-user" href="javascript:void(0);">
+                                        <i class="fa-solid fa-heart"></i> Лайк
+                                    </a>
+                                </div>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+            {{else}}
+                <div class="likes-page">
+                    <div class="likes-page__nothing-text">
+                        У тебя пока что нет лайков.
+                    </div>
+                </div>
+            {{/if}}
+        </div>
+
+
+        <div class="mobile-footer">
+            <div class="footer-menu">
+                <a class="active" href="javascript:void(0);"><i class="fa-regular fa-heart"></i>
+                    <!--                    <div class="js-like-counter like-counter">-->
+                    <!--                    </div>-->
+                </a>
+                <a href="../dating"><i class="fa-solid fa-id-badge"></i></a>
+                <a href="../settings"><i class="fas fa-cog"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>
+
+
+{{#each users}}
+    <div id="openModal-{{this.tg_user_id}}" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">О себе</h3>
+                    <a href="#close" title="Close" class="close">×</a>
+                </div>
+                <div class="modal-body">
+                    <span style="color:#242424;font-weight:300;">{{this.text}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+{{/each}}
